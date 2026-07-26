@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AskThePage | Your AI Reading Assistant</title>
+    <meta name="description" content="Chat with any webpage. Instant summaries, verifiable citations, and contextual Q&A directly in your browser.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Background Elements -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    
+    <nav class="navbar glass">
+        <div class="logo">AskThePage</div>
+        <div class="nav-links">
+            <a href="#features">Features</a>
+            <a class="btn-primary small add-extension-btn">Add to Browser</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <div class="badge">✨ Powered by powerful AI models</div>
+            <h1>Chat with <span>any webpage.</span></h1>
+            <p>Your intelligent browser assistant that reads the page for you. Get instant summaries, ask complex questions, and jump straight to the source.</p>
+            <div class="cta-group">
+                <a class="btn-primary large add-extension-btn">Add to Browser - It's Free</a>
+                <a href="#demo" class="btn-secondary large">See how it works</a>
+            </div>
+        </div>
+
+        <div class="hero-visual" id="demo">
+            <div class="browser-mockup glass">
+                <div class="browser-header">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                    <div class="mockup-url-bar">🔒 https://www.cbse.gov.in/cbsenew/cbse.html</div>
+                </div>
+                <div class="browser-body" style="padding: 0; display: flex; flex-direction: row; height: 700px; background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
+                    <!-- The Website Iframe -->
+                    <iframe src="https://www.cbse.gov.in/cbsenew/cbse.html" style="flex: 1; border: none; border-bottom-left-radius: 8px;"></iframe>
+                    
+                    <!-- The Extension Sidepanel Mockup -->
+                    <div class="sidepanel-mockup" style="width: 320px; background: #0f172a; border-left: 1px solid var(--glass-border); border-bottom-right-radius: 8px; display: flex; flex-direction: column; overflow: hidden; min-height: 0;">
+                        
+                        <!-- Sidepanel Header -->
+                        <div style="padding: 10px 15px; border-bottom: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center;">
+                            <strong style="color: #fff; font-size: 1rem;">AskThePage</strong>
+                            <span style="background: rgba(74, 222, 128, 0.1); color: #4ade80; padding: 2px 8px; border-radius: 12px; font-size: 0.7rem; border: 1px solid rgba(74, 222, 128, 0.3);">Page Ready</span>
+                        </div>
+                        
+                        <!-- Sidepanel Tabs -->
+                        <div style="display: flex; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                            <div class="mock-tab active" data-mocktab="mock-ask-tab" style="flex: 1; text-align: center; padding: 10px; color: #fff; font-size: 0.85rem; border-bottom: 2px solid #a78bfa; cursor: pointer;">Ask</div>
+                            <div class="mock-tab" data-mocktab="mock-summary-tab" style="flex: 1; text-align: center; padding: 10px; color: #a1a1aa; font-size: 0.85rem; cursor: pointer; border-bottom: 2px solid transparent;">Summary</div>
+                            <div class="mock-tab" data-mocktab="mock-settings-tab" style="flex: 1; text-align: center; padding: 10px; color: #a1a1aa; font-size: 0.85rem; cursor: pointer; border-bottom: 2px solid transparent;">Settings</div>
+                        </div>
+
+                        <!-- Ask Tab Content -->
+                        <div id="mock-ask-tab" class="mock-tab-content" style="display: flex; flex-direction: column; flex: 1; min-height: 0; overflow: hidden;">
+                            <!-- Chat Container -->
+                            <div class="chat-container" style="flex: 1; padding: 15px; overflow-y: scroll; display: flex; flex-direction: column; gap: 1rem; min-height: 0;">
+                                <div class="message bot">
+                                    Hi! I've read the CBSE website. What would you like to know?
+                                </div>
+                                <div class="message user">
+                                    Where can I find the updated syllabus for Class 10 & 12?
+                                </div>
+                                <div class="message bot">
+                                    The updated syllabus is located under the <strong>Curriculum</strong> tab in the main navigation menu. It contains the revised course structure for both Secondary (Class 10) and Senior Secondary (Class 12) levels. <br><br>
+                                    <strong>Key Updates for this year:</strong><br>
+                                    • The theory exams will consist of 80 marks with a heavier emphasis on competency-based questions (up to 50%). <span class="cite-chip">[1]</span><br>
+                                    • Internal assessments and practicals make up the remaining 20 marks, focusing on continuous evaluation. <span class="cite-chip">[2]</span><br>
+                                    • Subjects like AI and Data Science have received new, expanded modules. <span class="cite-chip">[3]</span>
+                                </div>
+                                <div class="message user">
+                                    Are there any changes to the practical exams?
+                                </div>
+                                <div class="message bot">
+                                    Yes! The practical exams and internal assessments now carry a strict 20% weightage across most subjects. <br><br>
+                                    Furthermore, schools are mandated to conduct these practicals under the supervision of external examiners appointed by the Board to ensure transparency. <span class="cite-chip">[4]</span>
+                                </div>
+                                <div class="message user">
+                                    What about the passing criteria? Has that changed?
+                                </div>
+                                <div class="message bot">
+                                    The passing criteria remains largely the same. Students must score a minimum of 33% overall to pass. <br><br>
+                                    However, for subjects with both theory and practical components, you must secure 33% separately in both theory and practicals. <span class="cite-chip">[5]</span>
+                                </div>
+                                <div class="message user">
+                                    When will the date sheet be released?
+                                </div>
+                                <div class="message bot">
+                                    According to the latest circulars on this page, the tentative date for the release of the final board exam date sheet is typically in late December. Keep an eye on the "Latest @ CBSE" section for official announcements! <span class="cite-chip">[6]</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Chat Input Mockup -->
+                            <div style="padding: 15px; border-top: 1px solid rgba(255,255,255,0.1);">
+                                <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 10px; color: #a1a1aa; font-size: 0.85rem; display: flex; justify-content: space-between; cursor: text;">
+                                    <span>Ask a question...</span>
+                                    <span>🚀</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Summary Tab Content -->
+                        <div id="mock-summary-tab" class="mock-tab-content" style="display: none; flex-direction: column; flex: 1; padding: 15px; color: #a1a1aa; font-size: 0.9rem;">
+                            <div style="margin-bottom: 15px; display: flex; gap: 10px;">
+                                <select style="flex: 1; background: rgba(255,255,255,0.05); color: #fff; border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; padding: 6px;">
+                                    <option>Key Points</option>
+                                    <option>TL;DR</option>
+                                </select>
+                                <button style="background: #a78bfa; color: white; border: none; border-radius: 6px; padding: 6px 12px; cursor: pointer;">Generate</button>
+                            </div>
+                            <div style="flex: 1; overflow-y: scroll;">
+                                <strong style="color: #fff;">Page Summary:</strong><br><br>
+                                The Central Board of Secondary Education (CBSE) website provides comprehensive information for students, parents, and affiliated schools. <br><br>
+                                • Main navigation includes Curriculum, Board Exams, Circulars, and Rules.<br>
+                                • A dedicated helpline for Women in Distress is prominently featured.<br>
+                                • The latest circulars section highlights upcoming exam deadlines and training programs.
+                            </div>
+                        </div>
+
+                        <!-- Settings Tab Content -->
+                        <div id="mock-settings-tab" class="mock-tab-content" style="display: none; flex-direction: column; flex: 1; padding: 15px; color: #a1a1aa; font-size: 0.9rem;">
+                            <div style="margin-bottom: 15px;">
+                                <label style="display: block; margin-bottom: 5px; color: #fff;">AI Engine:</label>
+                                <div style="text-align: center; font-weight: bold; color: #4ade80; background: rgba(74, 222, 128, 0.1); border: 1px solid rgba(74, 222, 128, 0.3); padding: 8px; border-radius: 6px;">Multi-Model Pool (Active)</div>
+                            </div>
+                            <div style="margin-bottom: 15px;">
+                                <label style="display: block; margin-bottom: 5px; color: #fff;">Detail Level:</label>
+                                <select style="width: 100%; background: rgba(255,255,255,0.05); color: #fff; border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; padding: 6px;">
+                                    <option>Detailed & Explanatory</option>
+                                </select>
+                            </div>
+                            <button style="background: #a78bfa; color: white; border: none; border-radius: 6px; padding: 8px; width: 100%; cursor: pointer;">Save Settings</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="features" id="features">
+        <div class="feature-card glass hover-lift">
+            <div class="icon-wrap">⚡</div>
+            <h3>Instant Summaries</h3>
+            <p>Don't have time to read a 20-minute article? Get a precise TL;DR in seconds.</p>
+        </div>
+        <div class="feature-card glass hover-lift">
+            <div class="icon-wrap">💬</div>
+            <h3>Contextual Q&A</h3>
+            <p>Ask questions and get answers based strictly on the content of the page you're reading.</p>
+        </div>
+        <div class="feature-card glass hover-lift">
+            <div class="icon-wrap">🎯</div>
+            <h3>Verifiable Citations</h3>
+            <p>Every claim is backed by a citation. Click a chip to instantly scroll to the exact source text.</p>
+        </div>
+    </section>
+
+    <footer class="glass">
+        <p>&copy; 2026 AskThePage.</p>
+    </footer>
+
+    <!-- Download & Install Modal -->
+    <div class="modal-overlay" id="installModal">
+        <div class="modal-content glass">
+            <button class="modal-close" id="closeModal">&times;</button>
+            <div class="modal-header">
+                <div class="download-icon-wrap">
+                    <div class="pulse-ring"></div>
+                    <span class="icon">📦</span>
+                </div>
+                <h2>Download Started!</h2>
+                <p>Follow these 3 simple steps to install your extension.</p>
+            </div>
+            
+            <div class="install-steps">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <div class="step-text">
+                        <strong>Extract the ZIP</strong>
+                        <span>Open your downloads and extract <code>askthepage-extension.zip</code></span>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <div class="step-text">
+                        <strong>Open Extensions</strong>
+                        <span>Type <code id="modal-browser-url">chrome://extensions</code> in your URL bar and turn on <strong style="color: #4ade80;">Developer Mode</strong>.</span>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <div class="step-text">
+                        <strong>Load Unpacked</strong>
+                        <span>Click the <strong>"Load Unpacked"</strong> button and select your extracted folder.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-primary large" id="btnGotIt" style="width: 100%;">Awesome, I got it!</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
