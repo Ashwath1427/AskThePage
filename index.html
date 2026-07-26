@@ -127,10 +127,15 @@
                         </div>
 
                         <!-- Settings Tab Content -->
-                        <div id="mock-settings-tab" class="mock-tab-content" style="display: none; flex-direction: column; flex: 1; padding: 15px; color: #a1a1aa; font-size: 0.9rem;">
+                        <div id="mock-settings-tab" class="mock-tab-content" style="display: none; flex-direction: column; flex: 1; padding: 15px; color: #a1a1aa; font-size: 0.85rem; overflow-y: scroll;">
                             <div style="margin-bottom: 15px;">
-                                <label style="display: block; margin-bottom: 5px; color: #fff;">AI Engine:</label>
-                                <div style="text-align: center; font-weight: bold; color: #4ade80; background: rgba(74, 222, 128, 0.1); border: 1px solid rgba(74, 222, 128, 0.3); padding: 8px; border-radius: 6px;">Multi-Model Pool (Active)</div>
+                                <label style="display: block; margin-bottom: 5px; color: #fff;">Free API Keys:</label>
+                                <div style="width: 100%; padding: 8px; border-radius: 6px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #a78bfa; text-align: center; font-weight: bold; font-family: monospace;">PREMIUM (Unlimited)</div>
+                            </div>
+                            <div style="margin-bottom: 15px;">
+                                <label style="display: block; margin-bottom: 5px; color: #fff;">Your API Key:</label>
+                                <input type="password" value="AIzaSyXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" disabled style="width: 100%; background: rgba(255,255,255,0.05); color: #fff; border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; padding: 6px;">
+                                <small style="display: block; margin-top: 5px; color: #a1a1aa; font-size: 11px;">Get a free key at <a href="#" style="color: #60a5fa; text-decoration: none;">aistudio.google.com</a></small>
                             </div>
                             <div style="margin-bottom: 15px;">
                                 <label style="display: block; margin-bottom: 5px; color: #fff;">Detail Level:</label>
@@ -138,7 +143,12 @@
                                     <option>Detailed & Explanatory</option>
                                 </select>
                             </div>
+                            <div style="margin-bottom: 15px;">
+                                <label style="display: block; margin-bottom: 5px; color: #fff;">Custom Instructions (About You):</label>
+                                <textarea disabled style="width: 100%; background: rgba(255,255,255,0.05); color: #fff; border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; padding: 6px; resize: none; font-family: inherit;" rows="3">i am student i want to understand this for my project soo make it clear and in simple words</textarea>
+                            </div>
                             <button style="background: #a78bfa; color: white; border: none; border-radius: 6px; padding: 8px; width: 100%; cursor: pointer;">Save Settings</button>
+                            <p style="margin-top: 15px; font-size: 11px; text-align: center;">These settings control how the AI responds.</p>
                         </div>
                     </div>
                 </div>
