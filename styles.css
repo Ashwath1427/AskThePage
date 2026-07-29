@@ -3,6 +3,24 @@
    Inspired by Apple's liquid glass / visionOS design language
    ═══════════════════════════════════════════════════════════ */
 
+@property --pos-x { syntax: '<percentage>'; initial-value: 11.14%; inherits: false; }
+@property --pos-y { syntax: '<percentage>'; initial-value: 140%; inherits: false; }
+@property --spread-x { syntax: '<percentage>'; initial-value: 150%; inherits: false; }
+@property --spread-y { syntax: '<percentage>'; initial-value: 180.06%; inherits: false; }
+@property --color-1 { syntax: '<color>'; initial-value: #000; inherits: false; }
+@property --color-2 { syntax: '<color>'; initial-value: #08012c; inherits: false; }
+@property --color-3 { syntax: '<color>'; initial-value: #4e1e40; inherits: false; }
+@property --color-4 { syntax: '<color>'; initial-value: #70464e; inherits: false; }
+@property --color-5 { syntax: '<color>'; initial-value: #88394c; inherits: false; }
+@property --border-angle { syntax: '<angle>'; initial-value: 20deg; inherits: true; }
+@property --border-color-1 { syntax: '<color>'; initial-value: hsla(340, 75%, 60%, 0.2); inherits: true; }
+@property --border-color-2 { syntax: '<color>'; initial-value: hsla(340, 75%, 40%, 0.75); inherits: true; }
+@property --stop-1 { syntax: '<percentage>'; initial-value: 37.35%; inherits: false; }
+@property --stop-2 { syntax: '<percentage>'; initial-value: 61.36%; inherits: false; }
+@property --stop-3 { syntax: '<percentage>'; initial-value: 78.42%; inherits: false; }
+@property --stop-4 { syntax: '<percentage>'; initial-value: 89.52%; inherits: false; }
+@property --stop-5 { syntax: '<percentage>'; initial-value: 100%; inherits: false; }
+
 :root {
     /* Liquid Glass Palette */
     --bg-dark: #0c0c14;
@@ -123,43 +141,124 @@ body {
     color: #fff;
 }
 
-/* ═══ Buttons — Frosted Pill Style ═══ */
+/* ─── Buttons ─── */
 .btn-primary, .btn-secondary {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     text-decoration: none;
-    border-radius: var(--radius-pill);
-    font-weight: 600;
-    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-    cursor: pointer;
-    letter-spacing: 0.2px;
-}
-.btn-primary {
-    background: rgba(167, 139, 250, 0.15);
+    font-weight: 500;
+    font-family: inherit;
+    border-radius: 11px;
     color: white;
-    border: 1px solid rgba(167, 139, 250, 0.4);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    box-shadow: 0 4px 20px rgba(167, 139, 250, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    appearance: none;
+    cursor: pointer;
+    position: relative;
+    outline: none;
 }
+
+.btn-primary.small, .btn-secondary.small { padding: 0.5rem 1.2rem; font-size: 0.9rem; min-width: 132px; }
+.btn-primary.large, .btn-secondary.large { padding: 1rem 2.25rem; font-size: 1rem; min-width: 132px; }
+
+/* Primary Button (Gradient) */
+.btn-primary {
+    background: radial-gradient(
+      var(--spread-x) var(--spread-y) at var(--pos-x) var(--pos-y),
+      var(--color-1) var(--stop-1),
+      var(--color-2) var(--stop-2),
+      var(--color-3) var(--stop-3),
+      var(--color-4) var(--stop-4),
+      var(--color-5) var(--stop-5)
+    );
+    transition:
+      --pos-x 0.5s, --pos-y 0.5s, --spread-x 0.5s, --spread-y 0.5s,
+      --color-1 0.5s, --color-2 0.5s, --color-3 0.5s, --color-4 0.5s, --color-5 0.5s,
+      --border-angle 0.5s, --border-color-1 0.5s, --border-color-2 0.5s,
+      --stop-1 0.5s, --stop-2 0.5s, --stop-3 0.5s, --stop-4 0.5s, --stop-5 0.5s;
+}
+
+.btn-primary::before, .btn-secondary::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(
+      var(--border-angle),
+      var(--border-color-1),
+      var(--border-color-2)
+    );
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    -webkit-mask-composite: xor;
+    pointer-events: none;
+}
+
 .btn-primary:hover {
-    background: rgba(167, 139, 250, 0.25);
-    box-shadow: 0 8px 30px rgba(167, 139, 250, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.2);
-    transform: translateY(-2px);
-    border-color: rgba(167, 139, 250, 0.6);
+    --pos-x: 0%;
+    --pos-y: 91.51%;
+    --spread-x: 120.24%;
+    --spread-y: 103.18%;
+    --color-1: #c96287;
+    --color-2: #c66c64;
+    --color-3: #cc7d23;
+    --color-4: #37140a;
+    --color-5: #000;
+    --border-angle: 190deg;
+    --border-color-1: hsla(340, 78%, 90%, 0.1);
+    --border-color-2: hsla(340, 75%, 90%, 0.6);
+    --stop-1: 0%;
+    --stop-2: 8.8%;
+    --stop-3: 21.44%;
+    --stop-4: 71.34%;
+    --stop-5: 85.76%;
 }
+
+/* Secondary Button (Variant Gradient) */
 .btn-secondary {
-    background: rgba(255, 255, 255, 0.06);
-    color: var(--text-main);
-    border: 1px solid var(--glass-border-strong);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    background: radial-gradient(
+      var(--spread-x) var(--spread-y) at var(--pos-x) var(--pos-y),
+      var(--color-1) var(--stop-1),
+      var(--color-2) var(--stop-2),
+      var(--color-3) var(--stop-3),
+      var(--color-4) var(--stop-4),
+      var(--color-5) var(--stop-5)
+    );
+    transition:
+      --pos-x 0.5s, --pos-y 0.5s, --spread-x 0.5s, --spread-y 0.5s,
+      --color-1 0.5s, --color-2 0.5s, --color-3 0.5s, --color-4 0.5s, --color-5 0.5s,
+      --border-angle 0.5s, --border-color-1 0.5s, --border-color-2 0.5s,
+      --stop-1 0.5s, --stop-2 0.5s, --stop-3 0.5s, --stop-4 0.5s, --stop-5 0.5s;
+      
+    --color-1: #000022;
+    --color-2: #1f3f6d;
+    --color-3: #469396;
+    --color-4: #f1ffa5;
+    --border-angle: 200deg;
+    --border-color-1: hsla(320, 75%, 90%, 0.6);
+    --border-color-2: hsla(320, 50%, 90%, 0.15);
 }
+
 .btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.12);
-    border-color: rgba(255, 255, 255, 0.35);
+    --pos-x: 0%;
+    --pos-y: 95.51%;
+    --spread-x: 110.24%;
+    --spread-y: 110.2%;
+    --color-1: #000020;
+    --color-2: #f1ffa5;
+    --color-3: #469396;
+    --color-4: #1f3f6d;
+    --color-5: #000;
+    --stop-1: 0%;
+    --stop-2: 10%;
+    --stop-3: 35.44%;
+    --stop-4: 71.34%;
+    --stop-5: 90.76%;
+    --border-angle: 210deg;
+    --border-color-1: hsla(320, 75%, 90%, 0.2);
+    --border-color-2: hsla(320, 50%, 90%, 0.75);
 }
-.small { padding: 0.5rem 1.2rem; font-size: 0.9rem; }
-.large { padding: 0.85rem 1.8rem; font-size: 1.05rem; }
 
 /* ═══ Hero ═══ */
 .hero {
@@ -598,3 +697,372 @@ footer a:hover {
     .nav-links { display: none; }
     .cta-group { flex-direction: column; align-items: center; }
 }
+/* Floating Widget Container */
+#askthepage-floating-widget {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 2147483647;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 16px;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  pointer-events: none;
+}
+
+#askthepage-floating-widget * {
+  box-sizing: border-box;
+}
+
+/* Chat Window */
+.atp-chat-window {
+  width: 380px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(15, 23, 42, 0.6);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  overflow: hidden;
+  pointer-events: auto;
+  
+  /* Framer Motion Spring animation defaults */
+  opacity: 0;
+  transform: translateY(20px) scale(0.95);
+  transform-origin: bottom right;
+  transition: opacity 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+              transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.atp-chat-window.atp-open {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Header */
+.atp-header {
+  position: relative;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 16px;
+  overflow: hidden;
+}
+
+.atp-header-gradient {
+  position: absolute;
+  inset: 0;
+  opacity: 0.5;
+  background: linear-gradient(to bottom right, rgba(16, 185, 129, 0.2), rgba(52, 211, 153, 0.2));
+  transition: background 0.3s;
+}
+
+.atp-header-content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 10;
+}
+
+.atp-agent-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.atp-avatar {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #0f172a;
+  background: #1e293b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.atp-avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.atp-status-dot {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid #0f172a;
+  background: #10b981; /* Online */
+  transition: background 0.3s;
+}
+
+.atp-agent-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+}
+
+.atp-agent-role {
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.atp-close-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.atp-close-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Agent Selector */
+.atp-selector {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 12px;
+}
+
+.atp-selector select {
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+  padding: 8px;
+}
+.atp-selector select option {
+  background: #0f172a;
+  color: #fff;
+  font-size: 14px;
+}
+
+/* Chat Area */
+.atp-chat-area {
+  height: 320px;
+  overflow-y: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: linear-gradient(to bottom, rgba(15, 23, 42, 0.2), rgba(15, 23, 42, 0.4));
+}
+
+.atp-message-row {
+  display: flex;
+  gap: 12px;
+  animation: atp-msg-slide 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+
+.atp-message-row.atp-user-row {
+  flex-direction: row-reverse;
+  align-self: flex-end;
+}
+
+@keyframes atp-msg-slide {
+  from { opacity: 0; transform: translateY(10px) translateX(-10px); }
+  to { opacity: 1; transform: translateY(0) translateX(0); }
+}
+
+.atp-msg-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.atp-msg-content {
+  max-width: 85%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.atp-user-row .atp-msg-content {
+  align-items: flex-end;
+}
+
+.atp-msg-name {
+  font-size: 12px;
+  font-weight: 500;
+  color: #94a3b8;
+}
+
+.atp-msg-bubble {
+  padding: 10px 16px;
+  border-radius: 16px;
+  font-size: 14px;
+  line-height: 1.5;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.atp-bot-bubble {
+  border-top-left-radius: 0;
+  background: rgba(255, 255, 255, 0.05);
+  color: #f8fafc;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.atp-user-bubble {
+  border-top-right-radius: 0;
+  background: #3b82f6; /* primary color */
+  color: #fff;
+}
+
+/* Typing Indicator */
+.atp-typing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  width: 64px;
+  height: 44px;
+}
+.atp-typing span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  animation: atp-bounce 1.4s infinite ease-in-out both;
+}
+.atp-typing span:nth-child(1) { animation-delay: -0.32s; }
+.atp-typing span:nth-child(2) { animation-delay: -0.16s; }
+
+@keyframes atp-bounce {
+  0%, 80%, 100% { transform: scale(0); }
+  40% { transform: scale(1); }
+}
+
+/* Input Area */
+.atp-input-area {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(15, 23, 42, 0.6);
+  padding: 12px;
+  backdrop-filter: blur(12px);
+}
+
+.atp-input-form {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.atp-input-form input {
+  flex: 1;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 10px 16px;
+  font-size: 14px;
+  color: #fff;
+  outline: none;
+  transition: all 0.2s;
+}
+.atp-input-form input:focus {
+  border-color: rgba(59, 130, 246, 0.5);
+  background: #0f172a;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
+}
+
+.atp-input-form button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #3b82f6;
+  color: #fff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+.atp-input-form button:hover:not(:disabled) {
+  transform: scale(1.05);
+  box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.25);
+}
+.atp-input-form button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Toggle Button */
+.atp-toggle-btn {
+  position: relative;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #3b82f6;
+  color: #fff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s;
+  pointer-events: auto;
+}
+.atp-toggle-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.25);
+}
+.atp-toggle-btn:active {
+  transform: scale(0.95);
+}
+.atp-toggle-btn.atp-open {
+  background: #ef4444; /* destructive */
+  transform: rotate(90deg);
+}
+
+.atp-toggle-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: inherit;
+  opacity: 0.2;
+  filter: blur(16px);
+  z-index: -1;
+  transition: opacity 0.3s;
+}
+.atp-toggle-btn:hover .atp-toggle-glow {
+  opacity: 0.4;
+}
+
+/* Icons */
+.atp-icon {
+  width: 24px;
+  height: 24px;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+.atp-icon-small {
+  width: 16px;
+  height: 16px;
+}
+@media (max-width: 480px) { #askthepage-floating-widget { right: 16px; bottom: 16px; left: 16px; align-items: stretch; } .atp-chat-window { width: auto; max-width: none; } }

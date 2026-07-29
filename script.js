@@ -101,14 +101,16 @@ document.addEventListener('DOMContentLoaded', () => {
             mockTabs.forEach(t => {
                 t.classList.remove('active');
                 t.style.color = '#a1a1aa';
-                t.style.borderBottom = '2px solid transparent';
+                t.style.background = 'transparent';
+                t.style.boxShadow = 'none';
             });
             mockContents.forEach(c => c.style.display = 'none');
 
             // Set current active
             tab.classList.add('active');
-            tab.style.color = '#fff';
-            tab.style.borderBottom = '2px solid #a78bfa';
+            tab.style.color = '#fafafa';
+            tab.style.background = '#18181b';
+            tab.style.boxShadow = '0 1px 3px rgba(0,0,0,0.2)';
 
             const targetId = tab.getAttribute('data-mocktab');
             const targetContent = document.getElementById(targetId);
