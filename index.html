@@ -33,7 +33,7 @@
         </div>
 
         <div class="hero-visual" id="demo">
-            <div class="browser-mockup glass">
+            <div class="browser-mockup glass aceternity-border">
                 <div class="browser-header">
                     <span class="dot red"></span>
                     <span class="dot yellow"></span>
@@ -45,83 +45,90 @@
                     <iframe src="https://www.cbse.gov.in/cbsenew/cbse.html" style="flex: 1; border: none; border-bottom-left-radius: 8px;"></iframe>
                     
                     <!-- The Extension Sidepanel Mockup -->
-                    <!-- The Extension Sidepanel Mockup -->
                     <div class="sidepanel-mockup" style="width: 320px; background: #09090b; border-left: 1px solid #27272a; border-bottom-right-radius: 8px; display: flex; flex-direction: column; overflow: hidden; min-height: 0; font-family: 'Inter', system-ui, -apple-system, sans-serif;">
                         
                         <!-- Sidepanel Header -->
-                        <div style="padding: 16px; border-bottom: 1px solid #27272a; display: flex; justify-content: space-between; align-items: center;">
-                            <strong style="color: #fafafa; font-size: 16px; font-weight: 600; letter-spacing: -0.02em;">AskThePage</strong>
-                            <span style="background: rgba(34, 197, 94, 0.15); color: #22c55e; padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 500;">Page Ready</span>
+                        <div class="mockup-header">
+                            <strong>AskThePage</strong>
+                            <span class="status ready">Page Ready</span>
                         </div>
                         
                         <!-- Sidepanel Tabs -->
-                        <div style="display: flex; padding: 12px 16px; background: #09090b; border-bottom: 1px solid #27272a; gap: 8px;">
-                            <div class="mock-tab active" data-mocktab="mock-ask-tab" style="flex: 1; text-align: center; padding: 8px 12px; color: #fafafa; font-size: 13px; font-weight: 500; cursor: pointer; background: #18181b; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.2); border: none;">Ask</div>
-                            <div class="mock-tab" data-mocktab="mock-summary-tab" style="flex: 1; text-align: center; padding: 8px 12px; color: #a1a1aa; font-size: 13px; font-weight: 500; cursor: pointer; background: transparent; border-radius: 12px; border: none;">Summary</div>
-                            <div class="mock-tab" data-mocktab="mock-settings-tab" style="flex: 1; text-align: center; padding: 8px 12px; color: #a1a1aa; font-size: 13px; font-weight: 500; cursor: pointer; background: transparent; border-radius: 12px; border: none;">Settings</div>
+                        <div class="mockup-tabs">
+                            <div class="mock-tab active" data-mocktab="mock-ask-tab">Ask</div>
+                            <div class="mock-tab" data-mocktab="mock-summary-tab">Summary</div>
+                            <div class="mock-tab" data-mocktab="mock-settings-tab">Settings</div>
                         </div>
 
                         <!-- Ask Tab Content -->
-                        <div id="mock-ask-tab" class="mock-tab-content" style="display: flex; flex-direction: column; flex: 1; min-height: 0; overflow: hidden;">
+                        <div id="mock-ask-tab" class="mock-tab-content">
                             <!-- Chat Container -->
-                            <div class="chat-container" style="flex: 1; padding: 16px; overflow-y: scroll; display: flex; flex-direction: column; gap: 20px; min-height: 0;">
-                                <div class="mock-msg bot" style="align-self: flex-start; max-width: 90%; color: #fafafa; font-size: 14px; line-height: 1.6; animation: fadeIn 0.3s ease;">
-                                    Hi! I've read the CBSE website. What would you like to know?
+                            <div class="chat-container">
+                                <div class="mock-msg bot">
+                                    <div class="message-content">Hi! I've read the CBSE website. What would you like to know?</div>
                                 </div>
-                                <div class="mock-msg user" style="align-self: flex-end; max-width: 90%; background: #18181b; border: 1px solid #27272a; padding: 12px 16px; border-radius: 16px; border-bottom-right-radius: 4px; color: #fafafa; font-size: 14px; line-height: 1.6; animation: fadeIn 0.3s ease;">
-                                    Where can I find the updated syllabus for Class 10 & 12?
+                                <div class="mock-msg user">
+                                    <div class="message-content">Where can I find the updated syllabus for Class 10 & 12?</div>
                                 </div>
-                                <div class="mock-msg bot" style="align-self: flex-start; max-width: 90%; color: #fafafa; font-size: 14px; line-height: 1.6; animation: fadeIn 0.3s ease;">
-                                    The updated syllabus is located under the <strong>Curriculum</strong> tab in the main navigation menu. It contains the revised course structure for both Secondary (Class 10) and Senior Secondary (Class 12) levels. <br><br>
-                                    <strong>Key Updates for this year:</strong><br>
-                                    • The theory exams will consist of 80 marks with a heavier emphasis on competency-based questions (up to 50%). <span style="display: inline-flex; align-items: center; justify-content: center; background: rgba(59,130,246,0.15); color: #3b82f6; padding: 1px 8px; border-radius: 10px; font-size: 11px; font-weight: 600; cursor: pointer; border: 1px solid rgba(59,130,246,0.3);">[1]</span><br>
-                                    • Internal assessments and practicals make up the remaining 20 marks, focusing on continuous evaluation. <span style="display: inline-flex; align-items: center; justify-content: center; background: rgba(59,130,246,0.15); color: #3b82f6; padding: 1px 8px; border-radius: 10px; font-size: 11px; font-weight: 600; cursor: pointer; border: 1px solid rgba(59,130,246,0.3);">[2]</span><br>
-                                    • Subjects like AI and Data Science have received new, expanded modules. <span style="display: inline-flex; align-items: center; justify-content: center; background: rgba(59,130,246,0.15); color: #3b82f6; padding: 1px 8px; border-radius: 10px; font-size: 11px; font-weight: 600; cursor: pointer; border: 1px solid rgba(59,130,246,0.3);">[3]</span>
+                                <div class="mock-msg bot">
+                                    <div class="message-content">
+                                        The updated syllabus is located under the <strong>Curriculum</strong> tab in the main navigation menu. It contains the revised course structure for both Secondary (Class 10) and Senior Secondary (Class 12) levels. <br><br>
+                                        <strong>Key Updates for this year:</strong><br>
+                                        • The theory exams will consist of 80 marks with a heavier emphasis on competency-based questions (up to 50%). <span class="mock-cite">[1]</span><br>
+                                        • Internal assessments and practicals make up the remaining 20 marks, focusing on continuous evaluation. <span class="mock-cite">[2]</span><br>
+                                        • Subjects like AI and Data Science have received new, expanded modules. <span class="mock-cite">[3]</span>
+                                    </div>
                                 </div>
-                                <div class="mock-msg user" style="align-self: flex-end; max-width: 90%; background: #18181b; border: 1px solid #27272a; padding: 12px 16px; border-radius: 16px; border-bottom-right-radius: 4px; color: #fafafa; font-size: 14px; line-height: 1.6; animation: fadeIn 0.3s ease;">
-                                    Are there any changes to the practical exams?
+                                <div class="mock-msg user">
+                                    <div class="message-content">Are there any changes to the practical exams?</div>
                                 </div>
-                                <div class="mock-msg bot" style="align-self: flex-start; max-width: 90%; color: #fafafa; font-size: 14px; line-height: 1.6; animation: fadeIn 0.3s ease;">
-                                    Yes! The practical exams and internal assessments now carry a strict 20% weightage across most subjects. <br><br>
-                                    Furthermore, schools are mandated to conduct these practicals under the supervision of external examiners appointed by the Board to ensure transparency. <span style="display: inline-flex; align-items: center; justify-content: center; background: rgba(59,130,246,0.15); color: #3b82f6; padding: 1px 8px; border-radius: 10px; font-size: 11px; font-weight: 600; cursor: pointer; border: 1px solid rgba(59,130,246,0.3);">[4]</span>
+                                <div class="mock-msg bot">
+                                    <div class="message-content">
+                                        Yes! The practical exams and internal assessments now carry a strict 20% weightage across most subjects. <br><br>
+                                        Furthermore, schools are mandated to conduct these practicals under the supervision of external examiners appointed by the Board to ensure transparency. <span class="mock-cite">[4]</span>
+                                    </div>
                                 </div>
-                                <div class="mock-msg user" style="align-self: flex-end; max-width: 90%; background: #18181b; border: 1px solid #27272a; padding: 12px 16px; border-radius: 16px; border-bottom-right-radius: 4px; color: #fafafa; font-size: 14px; line-height: 1.6; animation: fadeIn 0.3s ease;">
-                                    What about the passing criteria? Has that changed?
+                                <div class="mock-msg user">
+                                    <div class="message-content">What about the passing criteria? Has that changed?</div>
                                 </div>
-                                <div class="mock-msg bot" style="align-self: flex-start; max-width: 90%; color: #fafafa; font-size: 14px; line-height: 1.6; animation: fadeIn 0.3s ease;">
-                                    The passing criteria remains largely the same. Students must score a minimum of 33% overall to pass. <br><br>
-                                    However, for subjects with both theory and practical components, you must secure 33% separately in both theory and practicals. <span style="display: inline-flex; align-items: center; justify-content: center; background: rgba(59,130,246,0.15); color: #3b82f6; padding: 1px 8px; border-radius: 10px; font-size: 11px; font-weight: 600; cursor: pointer; border: 1px solid rgba(59,130,246,0.3);">[5]</span>
+                                <div class="mock-msg bot">
+                                    <div class="message-content">
+                                        The passing criteria remains largely the same. Students must score a minimum of 33% overall to pass. <br><br>
+                                        However, for subjects with both theory and practical components, you must secure 33% separately in both theory and practicals. <span class="mock-cite">[5]</span>
+                                    </div>
                                 </div>
-                                <div class="mock-msg user" style="align-self: flex-end; max-width: 90%; background: #18181b; border: 1px solid #27272a; padding: 12px 16px; border-radius: 16px; border-bottom-right-radius: 4px; color: #fafafa; font-size: 14px; line-height: 1.6; animation: fadeIn 0.3s ease;">
-                                    When will the date sheet be released?
+                                <div class="mock-msg user">
+                                    <div class="message-content">When will the date sheet be released?</div>
                                 </div>
-                                <div class="mock-msg bot" style="align-self: flex-start; max-width: 90%; color: #fafafa; font-size: 14px; line-height: 1.6; animation: fadeIn 0.3s ease;">
-                                    According to the latest circulars on this page, the tentative date for the release of the final board exam date sheet is typically in late December. Keep an eye on the "Latest @ CBSE" section for official announcements! <span style="display: inline-flex; align-items: center; justify-content: center; background: rgba(59,130,246,0.15); color: #3b82f6; padding: 1px 8px; border-radius: 10px; font-size: 11px; font-weight: 600; cursor: pointer; border: 1px solid rgba(59,130,246,0.3);">[6]</span>
+                                <div class="mock-msg bot">
+                                    <div class="message-content">
+                                        According to the latest circulars on this page, the tentative date for the release of the final board exam date sheet is typically in late December. Keep an eye on the "Latest @ CBSE" section for official announcements! <span class="mock-cite">[6]</span>
+                                    </div>
                                 </div>
                             </div>
                             
                             <!-- Chat Input Mockup -->
-                            <div style="padding: 16px; background: #09090b; border-top: 1px solid #27272a;">
-                                <div style="display: flex; align-items: center; background: #18181b; border: 1px solid #27272a; border-radius: 16px; padding: 4px;">
-                                    <span style="flex: 1; padding: 12px; color: #a1a1aa; font-size: 14px;">Ask about this page...</span>
-                                    <div style="background: #fafafa; color: #09090b; border-radius: 50%; height: 34px; width: 34px; display: flex; align-items: center; justify-content: center; margin-right: 6px; cursor: pointer; box-shadow: 0 0 10px rgba(250, 250, 250, 0.1);">
-                                        <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px; margin-right: 2px; margin-top: 2px;"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                            <div class="chat-input-area">
+                                <div class="chat-input-wrapper">
+                                    <span>Ask about this page...</span>
+                                    <div class="send-btn">
+                                        <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Summary Tab Content -->
-                        <div id="mock-summary-tab" class="mock-tab-content" style="display: none; flex-direction: column; flex: 1; padding: 16px; color: #a1a1aa; font-size: 14px;">
-                            <div style="margin-bottom: 16px; display: flex; gap: 12px;">
-                                <select style="flex: 1; background: #18181b; color: #fafafa; border: 1px solid #27272a; border-radius: 12px; padding: 10px 12px; font-size: 14px; font-family: 'Inter', system-ui, sans-serif; outline: none;">
+                        <div id="mock-summary-tab" class="mock-tab-content" style="display: none;">
+                            <div class="summary-controls">
+                                <select>
                                     <option>Key Points</option>
                                     <option>TL;DR</option>
                                     <option>Detailed</option>
                                 </select>
-                                <button class="mock-generate-btn" style="display: inline-flex; align-items: center; justify-content: center; font-weight: 500; border-radius: 8px; color: white; border: none; padding: 10px 16px; cursor: pointer; background: radial-gradient(150% 180.06% at 11.14% 140%, #000 37.35%, #08012c 61.36%, #4e1e40 78.42%, #70464e 89.52%, #88394c 100%); font-family: 'Inter', system-ui, sans-serif; font-size: 14px; position: relative;">Generate</button>
+                                <button class="btn-primary mock-generate-btn">Generate</button>
                             </div>
-                            <div style="flex: 1; overflow-y: scroll; background: #18181b; border-radius: 16px; padding: 20px; font-size: 14px; line-height: 1.6; color: #fafafa; border: 1px solid #27272a;">
+                            <div class="summary-result">
                                 <strong>Page Summary:</strong><br><br>
                                 The Central Board of Secondary Education (CBSE) website provides comprehensive information for students, parents, and affiliated schools. <br><br>
                                 • Main navigation includes Curriculum, Board Exams, Circulars, and Rules.<br>
@@ -131,28 +138,28 @@
                         </div>
 
                         <!-- Settings Tab Content -->
-                        <div id="mock-settings-tab" class="mock-tab-content" style="display: none; flex-direction: column; flex: 1; padding: 20px 16px; color: #a1a1aa; font-size: 14px; overflow-y: scroll;">
-                            <div style="margin-bottom: 20px;">
-                                <label style="display: block; margin-bottom: 8px; color: #a1a1aa; font-size: 13px; font-weight: 500;">Free API Keys:</label>
-                                <div style="width: 100%; padding: 10px 12px; border-radius: 12px; background: #18181b; border: 1px solid #27272a; color: #3b82f6; text-align: center; font-weight: bold; font-family: monospace; font-size: 14px;">PREMIUM (Unlimited)</div>
+                        <div id="mock-settings-tab" class="mock-tab-content" style="display: none;">
+                            <div class="settings-group">
+                                <label>Free API Keys:</label>
+                                <div class="api-key-badge">PREMIUM (Unlimited)</div>
                             </div>
-                            <div style="margin-bottom: 20px;">
-                                <label style="display: block; margin-bottom: 8px; color: #a1a1aa; font-size: 13px; font-weight: 500;">Your API Key:</label>
-                                <input type="password" value="AIzaSyXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" disabled style="width: 100%; background: #18181b; color: #fafafa; border: 1px solid #27272a; border-radius: 12px; padding: 10px 12px; font-size: 14px; font-family: 'Inter', system-ui, sans-serif;">
-                                <small style="display: block; margin-top: 8px; color: #a1a1aa; font-size: 12px;">Get a free key at <a href="#" style="color: #3b82f6; text-decoration: none;">aistudio.google.com</a></small>
+                            <div class="settings-group">
+                                <label>Your API Key:</label>
+                                <input type="password" value="AIzaSyXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" disabled>
+                                <small>Get a free key at <a href="#">aistudio.google.com</a></small>
                             </div>
-                            <div style="margin-bottom: 20px;">
-                                <label style="display: block; margin-bottom: 8px; color: #a1a1aa; font-size: 13px; font-weight: 500;">Detail Level:</label>
-                                <select style="width: 100%; background: #18181b; color: #fafafa; border: 1px solid #27272a; border-radius: 12px; padding: 10px 12px; font-size: 14px; font-family: 'Inter', system-ui, sans-serif;">
+                            <div class="settings-group">
+                                <label>Detail Level:</label>
+                                <select>
                                     <option>Detailed & Explanatory</option>
                                 </select>
                             </div>
-                            <div style="margin-bottom: 20px;">
-                                <label style="display: block; margin-bottom: 8px; color: #a1a1aa; font-size: 13px; font-weight: 500;">Custom Instructions (About You):</label>
-                                <textarea disabled style="width: 100%; background: #18181b; color: #fafafa; border: 1px solid #27272a; border-radius: 12px; padding: 10px 12px; resize: none; font-family: 'Inter', system-ui, sans-serif; font-size: 14px; outline: none;" rows="3">i am student i want to understand this for my project soo make it clear and in simple words</textarea>
+                            <div class="settings-group">
+                                <label>Custom Instructions (About You):</label>
+                                <textarea disabled rows="3">i am student i want to understand this for my project soo make it clear and in simple words</textarea>
                             </div>
-                            <button class="mock-generate-btn" style="display: inline-flex; align-items: center; justify-content: center; font-weight: 500; border-radius: 8px; color: white; border: none; padding: 10px 16px; width: 100%; cursor: pointer; background: radial-gradient(150% 180.06% at 11.14% 140%, #000 37.35%, #08012c 61.36%, #4e1e40 78.42%, #70464e 89.52%, #88394c 100%); font-family: 'Inter', system-ui, sans-serif; font-size: 14px;">Save Settings</button>
-                            <p style="margin-top: 16px; font-size: 12px; text-align: center; color: #a1a1aa;">These settings control how the AI responds.</p>
+                            <button class="btn-primary mock-generate-btn" style="width: 100%;">Save Settings</button>
+                            <p class="help-text">These settings control how the AI responds.</p>
                         </div>
                     </div>
                 </div>
@@ -161,20 +168,49 @@
     </header>
 
     <section class="features" id="features">
-        <div class="feature-card glass hover-lift">
-            <div class="icon-wrap">⚡</div>
-            <h3>Instant Summaries</h3>
-            <p>Don't have time to read a 20-minute article? Get a precise TL;DR in seconds.</p>
+        <!-- Card 1 -->
+        <div class="skew-card group">
+            <span class="skew-panel" style="background: linear-gradient(315deg, #ffbc00, #ff0058);"></span>
+            <span class="skew-panel glow" style="background: linear-gradient(315deg, #ffbc00, #ff0058);"></span>
+            <span class="blurs-container">
+                <span class="blur-blob top-blob"></span>
+                <span class="blur-blob bottom-blob"></span>
+            </span>
+            <div class="skew-content">
+                <div class="icon-wrap">⚡</div>
+                <h3>Instant Summaries</h3>
+                <p>Don't have time to read a 20-minute article? Get a precise TL;DR in seconds.</p>
+            </div>
         </div>
-        <div class="feature-card glass hover-lift">
-            <div class="icon-wrap">💬</div>
-            <h3>Contextual Q&A</h3>
-            <p>Ask questions and get answers based strictly on the content of the page you're reading.</p>
+
+        <!-- Card 2 -->
+        <div class="skew-card group">
+            <span class="skew-panel" style="background: linear-gradient(315deg, #03a9f4, #ff0058);"></span>
+            <span class="skew-panel glow" style="background: linear-gradient(315deg, #03a9f4, #ff0058);"></span>
+            <span class="blurs-container">
+                <span class="blur-blob top-blob"></span>
+                <span class="blur-blob bottom-blob"></span>
+            </span>
+            <div class="skew-content">
+                <div class="icon-wrap">💬</div>
+                <h3>Contextual Q&A</h3>
+                <p>Ask questions and get answers based strictly on the content of the page you're reading.</p>
+            </div>
         </div>
-        <div class="feature-card glass hover-lift">
-            <div class="icon-wrap">🎯</div>
-            <h3>Verifiable Citations</h3>
-            <p>Every claim is backed by a citation. Click a chip to instantly scroll to the exact source text.</p>
+
+        <!-- Card 3 -->
+        <div class="skew-card group">
+            <span class="skew-panel" style="background: linear-gradient(315deg, #4dff03, #00d0ff);"></span>
+            <span class="skew-panel glow" style="background: linear-gradient(315deg, #4dff03, #00d0ff);"></span>
+            <span class="blurs-container">
+                <span class="blur-blob top-blob"></span>
+                <span class="blur-blob bottom-blob"></span>
+            </span>
+            <div class="skew-content">
+                <div class="icon-wrap">🎯</div>
+                <h3>Verifiable Citations</h3>
+                <p>Every claim is backed by a citation. Click a chip to instantly scroll to the exact source text.</p>
+            </div>
         </div>
     </section>
 
